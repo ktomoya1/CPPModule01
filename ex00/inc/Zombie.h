@@ -4,15 +4,15 @@
 
 class Zombie {
   public:
-    Zombie() {}
+    Zombie(const std::string& new_name) : name(new_name) {}
     ~Zombie();
 
-    Zombie*     newZombie(std::string name);
-    void        randomChump(std::string name);
     void        announce();
-    void        set_name(std::string& new_name);
     std::string get_name();
 
   private:
     std::string name;
 };
+
+Zombie* newZombie(std::string name);
+void    randomChump(std::string name);
