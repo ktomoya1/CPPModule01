@@ -1,13 +1,16 @@
 #include "Zombie.h"
 
+#include <iostream>
+
 int main() {
-  Zombie *zombie;
+  int    zombie_count = 10;
+  Zombie *zombies;
 
-  zombie = newZombie("Foo");
-  zombie->announce();
-  delete zombie;
-
-  randomChump("Bar");
+  zombies = zombieHorde(zombie_count, "Foo");
+  for (int i = 0; i < zombie_count; ++i) {
+    std::cout << zombies[i].getName() << std::endl;
+  }
+  delete[] zombies;
 
   return 0;
 }

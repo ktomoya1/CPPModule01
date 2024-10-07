@@ -1,14 +1,15 @@
 PROGRAM := moar_brainz
 
-CXX := c++
-CXXFLAGS := -Wall -Wextra -Werror -std=c++98
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+DEBUGFLAGS = -g -fsanitize=address
 
-INCDIR := inc
-SRCDIR := src
-OBJDIR := obj
+INCDIR = inc
+SRCDIR = src
+OBJDIR = obj
 
-SRC := $(wildcard $(SRCDIR)/*.cpp)
-OBJ := $(SRC:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
+SRC = $(wildcard $(SRCDIR)/*.cpp)
+OBJ = $(SRC:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 
 all: $(PROGRAM)
 
@@ -27,7 +28,13 @@ fclean: clean
 
 re: fclean all
 
+ifeq ($(MAKECMDGOALS), debug)
+CXXFLAGS += $(DEBUGFLAGS)
+endif
+
+debug: re
+
 fmt:
 	$(if $(SRC), clang-format --style=Google -i $(SRC))
 
-.PHONY: all clean fclean re fmt
+.PHONY: all clean fclean re debug fmt

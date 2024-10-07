@@ -13,10 +13,10 @@ void Zombie::announce() {
   return;
 }
 
-std::string Zombie::getName() {
-  return this->name;
+void Zombie::setName(std::string& new_name) {
+  this->name = new_name;
 }
 
-Zombie* newZombie(std::string name) {
-  return new Zombie(name);
+std::string Zombie::getName() {
+  return this->name;
 }
