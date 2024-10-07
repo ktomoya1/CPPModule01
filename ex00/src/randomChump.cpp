@@ -3,6 +3,6 @@
 void randomChump(std::string name) {
   Zombie* zombie = newZombie(name);
   zombie->announce();
-  zombie->~Zombie();
+  delete zombie;
   return;
 }
