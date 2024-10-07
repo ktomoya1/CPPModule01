@@ -1,16 +1,16 @@
-#include "Zombie.h"
-
 #include <iostream>
 
 int main() {
-  int    zombie_count = 10;
-  Zombie *zombies;
+  std::string  string = "HI THIS IS BRAIN";
+  std::string* stringPTR = &string;
+  std::string& stringREF = string;
 
-  zombies = zombieHorde(zombie_count, "Foo");
-  for (int i = 0; i < zombie_count; ++i) {
-    std::cout << zombies[i].getName() << std::endl;
-  }
-  delete[] zombies;
+  std::cout << "   string address: " << &string << std::endl;
+  std::cout << "stringPTR address: " << stringPTR << std::endl;
+  std::cout << "stringREF address: " << &stringREF << std::endl;
 
+  std::cout << "   string value: " << string << std::endl;
+  std::cout << "stringPTR value: " << *stringPTR << std::endl;
+  std::cout << "stringREF value: " << stringREF << std::endl;
   return 0;
 }

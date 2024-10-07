@@ -4,7 +4,7 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 DEBUGFLAGS = -g -fsanitize=address
 
-INCDIR = inc
+INCDIR = .
 SRCDIR = src
 OBJDIR = obj
 
