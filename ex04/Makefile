@@ -1,4 +1,4 @@
-PROGRAM := anti_sed
+PROGRAM := simple_sed
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
