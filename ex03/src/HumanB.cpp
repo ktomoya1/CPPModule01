@@ -5,7 +5,7 @@
 #include <string>
 
 void HumanB::attack() {
-  if (this->weapon_ == nullptr) {
+  if (!this->weapon_) {
     std::cout << this->name_ << " has no weapon"
               << std::endl;
     return;
