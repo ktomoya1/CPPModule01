@@ -13,7 +13,7 @@ void Harl::complain(std::string level) {
       return;
     }
   }
-  std::cout << "Invalid level" << std::endl;
+  std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
   return;
 }
 
