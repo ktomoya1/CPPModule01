@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 
+HumanB::HumanB(const std::string& name) : name_(name), weapon_(NULL) {};
+
 void HumanB::attack() {
   if (!this->weapon_) {
     std::cout << this->name_ << " has no weapon"
