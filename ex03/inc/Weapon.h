@@ -4,7 +4,7 @@
 
 class Weapon {
   public:
-    Weapon(const std::string& type) : type_(type) {}
+    Weapon(const std::string& type);
 
     ~Weapon() {}
 
