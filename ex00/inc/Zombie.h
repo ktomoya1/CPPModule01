@@ -4,7 +4,7 @@
 
 class Zombie {
   public:
-    Zombie(const std::string& new_name) : name(new_name) {}
+    Zombie(const std::string& new_name);
     ~Zombie();
 
     void        announce();

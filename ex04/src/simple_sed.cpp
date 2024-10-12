@@ -14,6 +14,10 @@ int simple_sed(int argc, char* argv[]) {
   if (input_file.fail()) {
     std::cerr << "Failed to open input file" << std::endl;
     return 1;
+  } else if (input_file.peek() == std::ifstream::traits_type::eof()) {
+    std::cerr << "Input file is empty" << std::endl;
+    input_file.close();
+    return 1;
   }
   std::ofstream output_file((std::string(argv[1]) + ".replace").c_str());
   if (output_file.fail()) {

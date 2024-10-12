@@ -5,13 +5,6 @@
 
 class Harl {
   public:
-    enum Level {
-      DEBUG = 0,
-      INFO,
-      WARNING,
-      ERROR,
-    };
-
     int   ProgramStart(int argc, char* argv[]);
     void  complain(std::string level);
 

@@ -2,6 +2,8 @@
 
 #include <iostream>
 
+Zombie::Zombie(const std::string& new_name) : name(new_name) {};
+
 Zombie::~Zombie() {
   std::cout << this->name << " is destroyed" << std::endl;
 }

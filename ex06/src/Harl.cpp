@@ -14,30 +14,29 @@ int Harl::ProgramStart(int argc, char* argv[]) {
 }
 
 void Harl::complain(std::string level) {
-  void (Harl::*complaints[])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
   std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
-  int levelIndex = 0;
-  for (int i = 0; i < 4; ++i) {
+  int i = 0;
+  while (i < 4) {
     if (levels[i] == level) {
       break;
     }
-    levelIndex++;
+    i++;
   }
-  if (levelIndex >= 4) {
+  if (i >= 4) {
     std::cout << "[ Probably complaining about insignificant problems ]"
               << std::endl;
       return;
   }
-  switch (levelIndex) {
-    case DEBUG:
-      (this->*complaints[0])();
-    case INFO:
-      (this->*complaints[1])();
-    case WARNING:
-      (this->*complaints[2])();
-    case ERROR:
-      (this->*complaints[3])();
+  switch (i) {
+    case 0:
+      Harl::debug();
+    case 1:
+      Harl::info();
+    case 2:
+      Harl::warning();
+    case 3:
+      Harl::error();
     default:
       break;
   }
